@@ -26,7 +26,7 @@ func getDbFilePath() (string, bool) {
 		log.Fatal("Необходимо указать путь к файлу БД в TODO_DBFILE")
 	}
 
-	dbFile := filepath.Join(filepath.Dir(appPath), filename)
+	dbFile := filepath.Join(appPath, filename)
 
 	_, err = os.Stat(dbFile)
 

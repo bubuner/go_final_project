@@ -18,7 +18,7 @@ func main() {
 	handler := handlers.NewHandler(db)
 	router := http.NewServeMux()
 
-	router.Handle("/", http.FileServer(http.Dir("../web")))
+	router.Handle("/", http.FileServer(http.Dir("./web")))
 	router.HandleFunc("/api/nextdate", handler.NextDateHandler)
 	router.HandleFunc("POST /api/task", handler.CreateTask)
 	router.HandleFunc("POST /api/task/done", handler.MakeTaskHasDone)
